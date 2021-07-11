@@ -50,7 +50,13 @@ Enable and Start kubelet service
 systemctl enable --now kubelet
 On kmaster
 Initialize Kubernetes Cluster
-kubeadm init --apiserver-advertise-address=172.16.16.100 --pod-network-cidr=192.168.0.0/16
+kubeadm init --apiserver-advertise-address=192.168.122.78 --pod-network-cidr=192.168.0.0/16
+
+copy the token as per your token value : ie.
+kubeadm join 192.168.122.78:6443 --token 1so92q.vfb3ji59a35ts2ss \
+    --discovery-token-ca-cert-hash sha256:d8092a3b2ca482f8a5ebd50186fae9c9c72205a8d74ce9383c60ae8ac916cd26 
+
+
 Deploy Calico network
 kubectl --kubeconfig=/etc/kubernetes/admin.conf create -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
 Cluster join command
