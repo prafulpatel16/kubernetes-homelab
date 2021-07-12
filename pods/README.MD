@@ -66,6 +66,10 @@ pod/webserver   1/1     Running   0          9m41s
 NAME            READY   STATUS    RESTARTS   AGE
 pod/webserver   1/1     Running   0          9m50s
 
+5. check all details of pos using -o wide option
+[root@master-node ~]# kubectl get all -n twitter -o wide
+NAME            READY   STATUS    RESTARTS   AGE   IP               NODE       NOMINATED NODE   READINESS GATES
+pod/webserver   1/1     Running   0          20m   192.168.226.65   worker-1   <none>           <none>
 
 
 
