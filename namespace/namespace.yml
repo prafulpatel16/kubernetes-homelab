@@ -19,5 +19,5 @@ kind: Namespace
 apiVersion: v1
 metadata:
   name: dev
-  lables:
+  labels:
     name: dev
