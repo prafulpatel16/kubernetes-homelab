@@ -1,0 +1,12 @@
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: twitter
+  
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: facebook
+  
