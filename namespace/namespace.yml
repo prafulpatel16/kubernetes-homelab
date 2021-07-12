@@ -1,6 +1,7 @@
 ---
-apiVersion: v1
 kind: Namespace
-metadata: 
-  name: ecommerce
-  
+apiVersion: v1
+metadata:
+  name: test
+  labels:
+    name: test
