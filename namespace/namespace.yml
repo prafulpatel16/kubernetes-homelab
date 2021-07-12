@@ -3,15 +3,4 @@ apiVersion: v1
 kind: Namespace
 metadata: 
   name: Ecommerce
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: Database
-
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: web-server
+  
