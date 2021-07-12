@@ -5,3 +5,13 @@ metadata:
   name: test
   labels:
     name: test
+
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: qa
+  labels:
+    name: qa
+
+  
