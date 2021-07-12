@@ -14,4 +14,10 @@ metadata:
   labels:
     name: qa
 
-  
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dev
+  lables:
+    name: dev
