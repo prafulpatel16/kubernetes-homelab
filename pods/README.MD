@@ -104,4 +104,44 @@ kubectl describe pod/myswl -n twitter
  Delete database pod
  kubectl delete -f https://raw.githubusercontent.com/prafulpatel16/kubernetes-homelab/master/pods/2_singlepod_database.yml
  
+ ================================================================================================================
+ 
+ #Create singlepod with multicontainers
+ 
+ create a facebook namespace first
+ 
+ kubectl create ns facebook
+ 
+ kubectl apply -f https://raw.githubusercontent.com/prafulpatel16/kubernetes-homelab/master/pods/3_singlepod_multicontianer.yml
+ 
+[root@master-node ~]# kubectl get ns
+NAME              STATUS   AGE
+default           Active   33h
+facebook          Active   4h32m
+kube-node-lease   Active   33h
+kube-public       Active   33h
+kube-system       Active   33h
+test              Active   94m
+twitter           Active   4h32m
+[root@master-node ~]# kubectl get pods -n facebook
+NAME                  READY   STATUS    RESTARTS   AGE
+multicontainer-pods   2/2     Running   0          76s
+
+kubectl get all -n facebook -o wide
+ 
+ 
+kubectl describe pods/multincontainer-pods -n facebook
+ 
+# To get inside to the container
+ 
+ to go insdie web container
+ 
+  kubectl exec -it pod/multicontainer-pods bash -n facebook -c web
+ 
+ to go inside database container
+  kubectl exec -it pod/multicontainer-pods bash -n facebook -c db
+
+
+
+ 
  
