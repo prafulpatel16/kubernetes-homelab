@@ -1,7 +1,7 @@
 ---
 #single pod with duplicate port
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
   name: multicn_duplicate-ports
   namespace: facebook
