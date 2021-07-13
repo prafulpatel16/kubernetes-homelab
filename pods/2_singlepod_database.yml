@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  namespace: twitter
+  labels:
+    app: mysql
+    tier: backend
+    version: v1
+    env: production
+spec:
+  containers:
+  - name: mysql
+    image: mysql:5.6
+    ports:
+    - containerPort: 3306
