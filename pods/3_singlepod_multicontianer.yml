@@ -1,7 +1,7 @@
 #single pod with multiple containers
 
 apiVersion: v1
-kind: pod
+kind: Pod
 metadata:
    name: multicontainer-pods
    namespace: facebook
