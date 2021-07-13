@@ -141,7 +141,9 @@ kubectl describe pods/multincontainer-pods -n facebook
  to go inside database container
   kubectl exec -it pod/multicontainer-pods bash -n facebook -c db
 
-
+# Delete pod multicontainer
+ 
+ kubectl delete -f https://raw.githubusercontent.com/prafulpatel16/kubernetes-homelab/master/pods/3_singlepod_multicontianer.yml
 
  
  
