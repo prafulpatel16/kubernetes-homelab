@@ -72,7 +72,36 @@ NAME            READY   STATUS    RESTARTS   AGE   IP               NODE       N
 pod/webserver   1/1     Running   0          20m   192.168.226.65   worker-1   <none>           <none>
 
 
+6. List all pods in all namespaces
+ 
+ [root@master-node ~]# kubectl get pods --all-namespaces
+NAMESPACE     NAME                                       READY   STATUS             RESTARTS   AGE
+kube-system   calico-kube-controllers-65f8bc95db-47dxv   1/1     Running            3          32h
+kube-system   calico-node-494qf                          1/1     Running            4          32h
+kube-system   calico-node-vgbbx                          1/1     Running            2          32h
+kube-system   coredns-66bff467f8-bz64t                   1/1     Running            3          32h
+kube-system   coredns-66bff467f8-sl5hp                   1/1     Running            3          32h
+kube-system   etcd-master-node                           1/1     Running            3          32h
+kube-system   kube-apiserver-master-node                 1/1     Running            3          32h
+kube-system   kube-controller-manager-master-node        1/1     Running            49         32h
+kube-system   kube-proxy-8gjv4                           1/1     Running            3          32h
+kube-system   kube-proxy-b6gjm                           1/1     Running            2          32h
+kube-system   kube-scheduler-master-node                 1/1     Running            43         32h
+twitter       mysql                                      0/1     CrashLoopBackOff   8          18m
+twitter       webserver                                  1/1     Running            0          3h2m
 
 
+7. Describe pod in details in twitter namespace
+kubectl describe pod/webserver -n twitter
 
+kubectl describe pod/myswl -n twitter
 
+8. Delete pods webserver and database from twitter namespaces from github yaml automate
+ 
+ Delete webserver pod
+ kubectl delete -f https://raw.githubusercontent.com/prafulpatel16/kubernetes-homelab/master/pods/1_singlepod.yml
+ 
+ Delete database pod
+ kubectl delete -f https://raw.githubusercontent.com/prafulpatel16/kubernetes-homelab/master/pods/2_singlepod_database.yml
+ 
+ 
