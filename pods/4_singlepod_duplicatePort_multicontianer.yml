@@ -1,0 +1,28 @@
+---
+#single pod with multiple containers with duplicate port
+ apiVersion: v1
+kind: Pod
+metadata:
+  name: multicontainer-pods
+  namespace: facebook
+  labels:
+    app: httpd
+    tier: frontend-backend
+    version: v1
+spec:
+  containers:
+  - name: httpd1
+    image: httpd
+    ports:
+    - containerPort: 80
+  - name: httpd2
+    image: httpd
+    ports:
+    - containerPort: 80
+  - name: db
+    image: mysql
+    ports:
+    - containerPort: 3306
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: prafulcloud
