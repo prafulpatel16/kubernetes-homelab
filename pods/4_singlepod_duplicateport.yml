@@ -1,5 +1,5 @@
 ---
-#single pod with multiple containers with duplicate port
+#single pod with duplicate port
 apiVersion: v1
 kind: pod
 metadata:
